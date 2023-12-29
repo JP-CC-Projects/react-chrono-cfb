@@ -6,7 +6,7 @@ export const TimelineVerticalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1em;
+  padding: 0;
   outline: 0;
 `;
 
@@ -34,7 +34,8 @@ export const VerticalItemWrapper = styled.div<{
   width: 100%;
   align-items: stretch;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 1rem 0; 
+  // SPACE BETWEEN CARDS--RESERVE!
 
   &.left {
     margin-right: auto;
@@ -83,7 +84,7 @@ export const TimelineCardContentWrapper = styled.div<{
     } else if (p.$noTitle) {
       return `width: 95%;`;
     } else {
-      return `width: 75%;`;
+      return `width: 100%;`;
     }
   }}
   ${(p) => {
@@ -124,7 +125,7 @@ export const TimelineTitleWrapper = styled.div<{
 }>`
   align-items: center;
   display: ${(p) => (p.$hide && p.mode === 'VERTICAL' ? 'none' : 'flex')};
-  ${(p) => (p.$alternateCards ? 'width: 50%' : 'width: 15%')};
+  ${(p) => (p.$alternateCards ? 'width: 50%' : 'width: 30%')};
 
   &.left {
     justify-content: ${(p) => (p.$flip ? 'flex-end' : 'flex-start')};

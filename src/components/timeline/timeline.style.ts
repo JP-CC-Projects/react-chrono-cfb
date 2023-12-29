@@ -81,7 +81,7 @@ export const TimelineMainWrapper = styled.div<{
     min-height: 150px;
   }
 
-  padding: ${({ $scrollable }) => (!$scrollable ? '0 1rem 0' : '')};
+  padding: ${({ $scrollable }) => (!$scrollable ? '0' : '')};
 `;
 
 export const TimelineMain = styled.div`
