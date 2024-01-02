@@ -125,7 +125,7 @@ export const TimelineTitleWrapper = styled.div<{
 }>`
   align-items: center;
   display: ${(p) => (p.$hide && p.mode === 'VERTICAL' ? 'none' : 'flex')};
-  ${(p) => (p.$alternateCards ? 'width: 50%' : 'width: 30%')};
+  ${(p) => (p.$alternateCards ? 'width: 30%' : 'width:35%')};
 
   &.left {
     justify-content: ${(p) => (p.$flip ? 'flex-end' : 'flex-start')};
@@ -134,11 +134,17 @@ export const TimelineTitleWrapper = styled.div<{
 
   &.right {
     ${(p) =>
-      p.$flip
-        ? `
-      order: 3;
-      justify-content: flex-start;`
-        : `order: 1;
-    justify-content: flex-end;`};
+    p.$flip
+      ? `
+          order: 3;
+          justify-content: flex-start;`
+      : `order: 1;
+          justify-content: flex-end;`};
+  }
+
+  // Media query for screen widths at or below 1024px
+  @media (max-width: 1024px) {
+    min-width: 35%;
+    // Add any additional styling needed for smaller screens here
   }
 `;
